@@ -6,4 +6,10 @@ app.on('ready', (event, launchInfo) => {
         height: 600,
         width: 800
     });
+    window.loadURL(`file://${__dirname}/main.html`);
+
+    window.on('closed', () => {
+        window = null;
+    })
 });
+
