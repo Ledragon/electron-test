@@ -16,5 +16,9 @@
     "electron-prebuilt": "^1.4.13",
     "npm-run-all": "^4.0.2",
     "typescript": "^2.2.1"
+  },
+  "dependencies": {
+    "@types/d3": "^4.7.0",
+    "d3": "^4.7.3"
   }
 }
