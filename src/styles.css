@@ -1,0 +1,19 @@
+html, body{
+    height:100vh;
+    margin:0;
+    padding:0;
+    font:'Helvetica';
+}
+.main-container{
+    display: flex;
+    height:100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.image-preview{
+    height:100px;
+    width:100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}

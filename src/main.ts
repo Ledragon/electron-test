@@ -5,7 +5,7 @@ app.on('ready', (event, launchInfo) => {
     let window = new BrowserWindow({
         height: 600,
         width: 800,
-        frame: false,
+        frame: true,
         fullscreen:true
     });
     window.loadURL(`file://${__dirname}/main.html`);
