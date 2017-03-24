@@ -4,16 +4,26 @@ html, body{
     padding:0;
     font:'Helvetica';
 }
+.flex-container{
+    display: flex;
+    flex-grow:1;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
 .main-container{
     display: flex;
     height:100%;
     flex-direction: row;
-    flex-wrap: wrap;
+}
+.preview{
+    display: flex;
+    flex-grow:1;
 }
 .image-preview{
-    height:100px;
-    width:100px;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center top;
     background-size: contain;
+    flex-basis:100%;
+    flex-grow: 1;
 }

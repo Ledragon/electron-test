@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="flex-grid.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="main-container">
 
+<body>
+    <div class="flex-container flex-100 main-container">
+        <div class="flex-fix flex-50 flex-container flex-wrap" id="previews"></div>
+        <div class="flex-fix flex-50" id="details"></div>
     </div>
     <script>
         require('./app.js');
     </script>
 </body>
+
 </html>
