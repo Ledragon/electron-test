@@ -4,7 +4,9 @@ import { app, BrowserWindow } from 'electron';
 app.on('ready', (event, launchInfo) => {
     let window = new BrowserWindow({
         height: 600,
-        width: 800
+        width: 800,
+        frame: false,
+        fullscreen:true
     });
     window.loadURL(`file://${__dirname}/main.html`);
 
