@@ -8,7 +8,7 @@ app.on('ready', (event, launchInfo) => {
         frame: true,
         fullscreen:true
     });
-    window.loadURL(`file://${__dirname}/main.html`);
+    window.loadURL(`file://${__dirname}/index.html`);
 
     window.on('closed', () => {
         window = null;
