@@ -5,8 +5,9 @@
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",
-    "build": "tsc",
-    "watch": "tsc -w"
+    "build": "npm run clean && tsc",
+    "watch": "tsc -w",
+    "clean": "rimraf src/**/*.js src/**/*.js.map src/**/*.d.ts"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
     "@types/electron": "^1.4.34",
     "electron": "^1.4.13",
     "npm-run-all": "^4.0.2",
+    "rimraf": "^2.6.1",
     "typescript": "^2.2.1"
   },
   "dependencies": {
