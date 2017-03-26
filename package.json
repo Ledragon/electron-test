@@ -6,7 +6,8 @@
   "scripts": {
     "start": "electron .",
     "build": "tsc",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "clean":"rimraf src/**/*.js src/**/*.js.map"
   },
   "keywords": [],
   "author": "",
@@ -15,10 +16,19 @@
     "@types/electron": "^1.4.34",
     "electron": "^1.4.13",
     "npm-run-all": "^4.0.2",
+    "rimraf": "^2.6.1",
     "typescript": "^2.2.1"
   },
   "dependencies": {
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/router": "^4.0.0",
     "@types/d3": "^4.7.0",
-    "d3": "^4.7.3"
+    "d3": "^4.7.3",
+    "rxjs": "^5.2.0",
+    "zone.js": "^0.8.5"
   }
 }
