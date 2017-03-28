@@ -11,15 +11,16 @@
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
 
-    <link rel="stylesheet" href="flex-grid.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="content/flex-grid.css">
+    <link rel="stylesheet" href="content/styles.css">
 </head>
 
 <body>
     <div class="flex-container flex-100 main-container">
-        <div class="flex-fix flex-50 flex-container flex-wrap" id="previews"></div>
-        <div class="flex-fix flex-50" id="details">
-            <my-app></my-app>
+        <div class="flex-fix flex-50 flex-container flex-wrap" 
+        id="previews"></div>
+        <div class="flex-fix flex-50" style="display: flex;">
+             <div id="details" style="flex-grow: 1;"></div>
         </div>
     </div>
     <script>
