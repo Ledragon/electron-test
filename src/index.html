@@ -3,13 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-     <script src="node_modules/core-js/client/shim.min.js"></script>
-
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="../node_modules/core-js/client/shim.min.js"></script>
+    <script src="../node_modules/zone.js/dist/zone.js"></script>
 
     <link rel="stylesheet" href="content/flex-grid.css">
     <link rel="stylesheet" href="content/styles.css">
@@ -17,10 +13,11 @@
 
 <body>
     <div class="flex-container flex-100 main-container">
-        <div class="flex-fix flex-50 flex-container flex-wrap" 
-        id="previews"></div>
+        <div class="flex-fix flex-50 flex-container flex-wrap" id="previews">
+            <my-app></my-app>
+        </div>
         <div class="flex-fix flex-50" style="display: flex;">
-             <div id="details" style="flex-grow: 1;"></div>
+            <div id="details" style="flex-grow: 1;"></div>
         </div>
     </div>
     <script>
