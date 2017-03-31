@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "npm-run-all --parallel serve watch",
+    "serve": "electron .",
     "build": "npm run clean && tsc",
     "watch": "tsc -w",
     "clean": "rimraf src/**/*.js src/**/*.js.map src/**/*.d.ts"
@@ -24,13 +25,14 @@
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
     "@angular/core": "^4.0.0",
+    "@angular/http": "^4.0.1",
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "@types/d3": "^4.7.0",
+    "core-js": "^2.4.1",
     "d3": "^4.7.3",
     "rxjs": "^5.2.0",
-    "zone.js": "^0.8.5",
-    "core-js": "^2.4.1"
+    "zone.js": "^0.8.5"
   }
 }

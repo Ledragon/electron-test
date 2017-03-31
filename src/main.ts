@@ -1,6 +1,6 @@
 import { app, BrowserWindow } from 'electron';
 
-require('electron-reload')(`${__dirname}/**/*.js`);
+require('electron-reload')(`${__dirname}`);
 app.on('ready', (event, launchInfo) => {
     let window = new BrowserWindow({
         height: 600,

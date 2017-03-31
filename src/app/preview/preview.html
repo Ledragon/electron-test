@@ -1,6 +1,14 @@
 <div class="flex-25" style="display:flex">
-    <div class="preview">
+    <!--<div class="preview">
         <div class="preview-image"></div>
-        <span>{{name}}</span>
-    </div>
+        <span []="">{{name}}</span>
+    </div>-->
+    <ul>
+        <li *ngFor="let video of videos">
+            {{video.title}}
+        </li>
+    </ul>
+    
+    <button (click)="load()">Button</button>
+    
 </div>
