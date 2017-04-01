@@ -9,7 +9,6 @@ import { PreviewComponent } from './preview/preview.component';
     imports: [BrowserModule,
         HttpModule],
     declarations: [AppComponent, PreviewComponent],
-    bootstrap: [AppComponent],
-    providers: [Http]
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
