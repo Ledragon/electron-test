@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule, Http } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { PreviewComponent } from './preview/preview.component';
+import { VideoListComponent } from './video-list/video-list.component';
 
 @NgModule({
     imports: [BrowserModule,
         HttpModule],
-    declarations: [AppComponent, PreviewComponent],
+    declarations: [AppComponent, VideoListComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

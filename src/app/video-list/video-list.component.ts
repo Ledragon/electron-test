@@ -1,14 +1,14 @@
-import { Component, Injectable, OnInit, Sanitizer } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { libraryService } from '../library.service';
 
 @Component({
-  selector: 'preview',
-  templateUrl: 'app/preview/preview.html',
+  selector: 'video-list',
+  templateUrl: 'app/video-list/video-list.component.html',
   providers: [libraryService]
 })
 
-export class PreviewComponent implements OnInit {
+export class VideoListComponent implements OnInit {
   videos: Array<any> = [];
 
   constructor(private _libraryService: libraryService, private _sanitizer: DomSanitizer) {
@@ -17,6 +17,7 @@ export class PreviewComponent implements OnInit {
   ngOnInit() {
     this.load();
   }
+
   private load() {
     this._libraryService.load()
       .subscribe((data: Array<any>) => {
@@ -25,6 +26,7 @@ export class PreviewComponent implements OnInit {
             d.url = this._sanitizer.bypassSecurityTrustStyle(`url('data:image/png;base64,${d.serializedImage}')`);
             return d;
           })
+          .sort((a, b) => a.title - b.title)
           .splice(0, 12);
       });
   }
