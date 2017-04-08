@@ -1,9 +1,12 @@
 span{
     margin:5px;
+    font-size:12px;
 }
 .title{
     font-size:40px;
     color: lightgray;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
 }
 .category{
     font-size:32px;

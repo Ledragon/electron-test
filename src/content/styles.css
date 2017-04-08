@@ -2,14 +2,11 @@ html, body{
     height:100vh;
     margin:0;
     padding:0;
-    font-family: 'Lao UI', 'Helvetica';
+    font-family: 'Segoe UI','Lao UI', 'Helvetica';
 }
 .flex-container{
     display: flex;
     flex-grow:1;
-}
-.flex-wrap{
-    flex-wrap: wrap;
 }
 .main-container{
     display: flex;
@@ -24,13 +21,7 @@ html, body{
 #details{
     padding:15px;
 }
-.preview{
-    display: flex;
-    flex-grow:1;
-    flex-direction: column;
-    font-size: .8em;
-    /*padding: 5px;*/
-}
+
 .image-preview{
     background-repeat: no-repeat;
     background-position: center center;

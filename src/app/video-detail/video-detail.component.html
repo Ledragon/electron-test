@@ -1,7 +1,12 @@
-<div style="display:flex; flex-direction:column;">
+<div style="display:flex; flex-direction:column;flex-grow:1;margin:5px;">
     <span class="title">{{video.title}}</span>
     <span class="category">{{video.category}}</span>
     <div class="flex-wrap" style="margin:5px;">
         <span *ngFor="let tag of video.tags" class="tag">{{tag.value}}</span>
     </div>
+    <span>{{video.length}}</span>
+    <span>{{video.rating}}/5</span>
+    <span>Viewed {{video.numberOfViews}} times</span>
+    <span>Added on {{video.dateAdded | date: 'dd/MM/yyyy HH:mm'}}</span>
+    <div [style.background-image]="video.url" class="image-preview"></div>
 </div>

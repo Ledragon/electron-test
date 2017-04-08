@@ -1,16 +1,17 @@
 import { Component, Injectable, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { libraryService } from '../library.service';
+import { IVideo } from '../IVideo';
 
 @Component({
   selector: 'video-list',
   templateUrl: 'app/video-list/video-list.component.html',
   providers: [libraryService],
-  styleUrls:['app/video-list/video-list.component.css']
+  styleUrls: ['app/video-list/video-list.component.css']
 })
 
 export class VideoListComponent implements OnInit {
-  videos: Array<any> = [];
+  videos: Array<IVideo> = [];
   @Input() video;
 
 
