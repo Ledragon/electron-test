@@ -1,0 +1,7 @@
+<div style="display:flex; flex-direction:column;">
+    <span class="title">{{video.title}}</span>
+    <span class="category">{{video.category}}</span>
+    <div class="flex-wrap" style="margin:5px;">
+        <span *ngFor="let tag of video.tags" class="tag">{{tag.value}}</span>
+    </div>
+</div>

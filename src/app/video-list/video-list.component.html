@@ -1,6 +1,7 @@
-<div class="flex-25" style="display:flex" *ngFor="let video of videos">
+<div class="flex-25" style="display:flex" *ngFor="let video of videos" (click)="select(video)">
     <div class="preview">
         <div class="image-preview" [style.background-image]="video.url">
+            <span class="length">{{video.length}}</span>
         </div>
         <span>{{video.title}}</span>
     </div>

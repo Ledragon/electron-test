@@ -1,0 +1,15 @@
+span{
+    margin:5px;
+}
+.title{
+    font-size:40px;
+    color: lightgray;
+}
+.category{
+    font-size:32px;
+    color: darkgray;
+}
+.tag{
+    font-size:16px;
+    color:gray;
+}
