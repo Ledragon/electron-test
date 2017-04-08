@@ -12,6 +12,9 @@ import { IVideo } from '../IVideo';
 
 export class VideoListComponent implements OnInit {
   videos: Array<IVideo> = [];
+  private _fulllist: Array<IVideo> = [];
+  private _pageSize = 12;
+  private _page = 0;
   @Input() video;
 
 
@@ -27,20 +30,39 @@ export class VideoListComponent implements OnInit {
   private load() {
     this._libraryService.load()
       .subscribe((data: Array<any>) => {
-        this.videos = data
-          .map((d: any) => {
-            d.url = this._sanitizer.bypassSecurityTrustStyle(`url('data:image/png;base64,${d.serializedImage}')`);
-            return d;
-          })
-          .sort((a, b) => a.title - b.title)
-          .splice(0, 12);
-        this.select(this.videos[0]);
+        this._fulllist = data;
+        this._page = 0;
+        this.refresh();
       });
   }
   select(video) {
     console.log(video);
     this.video = video;
     this.selectedChange.emit(video);
+  }
+
+  previous() {
+    if (this._page > 0) {
+      this._page--;
+      this.refresh();
+    }
+  }
+  next() {
+    if (this._page * this._pageSize < this._fulllist.length) {
+      this._page++;
+      this.refresh();
+    }
+  }
+
+  private refresh() {
+    this.videos = this._fulllist
+      .map((d: any) => {
+        d.url = this._sanitizer.bypassSecurityTrustStyle(`url('data:image/png;base64,${d.serializedImage}')`);
+        return d;
+      })
+      .sort((a, b) => a.title - b.title)
+      .splice(this._page * this._pageSize, this._pageSize);
+    this.select(this.videos[0]);
   }
 
 }
