@@ -18,13 +18,12 @@
     flex-basis:100%
 }
 .flex-col{
-flex-direction: column;
-display: flex;
+    flex-direction: column;
+    display: flex;  
 }
-
 .flex-row{
-flex-direction: row;
-display: flex;
+    flex-direction: row;
+    display: flex;
 }
 .flex-wrap{
     flex-wrap: wrap;

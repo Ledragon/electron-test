@@ -1,7 +1,7 @@
-<div style="background:rgba(0,0,0,0.8); flex-direction:row;display:flex;" class="flex flex-100 container">
-    <video-list class="flex-fix flex-50" style="flex-direction:column;display:flex;" id="previews" (selectedChange)="video=$event">
+<div style="background:rgba(0,0,0,0.8);" class="flex flex-100 container flex-row">
+    <video-list class="flex-fix flex-50 flex-col" id="previews" (selectedChange)="video=$event">
     </video-list>
     <div class="flex-fix flex-50" style="display: flex;">
-        <video-detail class="flex-fix flex-100" style="display: flex; flex-grow:1;" *ngIf="video" [video]="video"></video-detail>
+        <video-detail class="flex-fix flex-100 flex-row" *ngIf="video" [video]="video"></video-detail>
     </div>
 </div>
