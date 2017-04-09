@@ -1,7 +1,7 @@
 <div class="flex-100 flex-container flex-col" style="margin:5px;">
     <button (click)="previous()">Previous</button>
     <div class="flex-wrap flex-100 flex-container">
-        <div class="flex-25" style="display:flex" *ngFor="let vid of videos" (click)="select(vid)" [ngClass]="{selected: vid===video}">
+        <div class="flex-25 preview-container" style="" *ngFor="let vid of videos" (click)="select(vid)" [ngClass]="{selected: vid===video}" title="{{vid.title}}">
             <div class="preview">
                 <div class="image-preview" [style.background-image]="vid.url">
                 </div>

@@ -3,6 +3,9 @@
 }
 .title{
     flex-basis:20%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .preview{
@@ -13,10 +16,15 @@
     border:1px solid lightgray;
     margin: 5px;
     /*padding: 5px;*/
+    overflow: hidden;
 }
 .selected .preview{
     background: rgba(255,255,0,0.5);
 }
 button{
     margin: 5px;
+}
+.preview-container{
+    display:flex;
+    overflow: hidden;
 }
