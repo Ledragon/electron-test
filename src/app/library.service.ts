@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { ascending } from 'd3-array';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
@@ -14,6 +15,10 @@ export class libraryService {
 
     load() {
         return this.http.get(`file://${projectRootPath}/src/data/data.json`)
-        .map(d=> d.json())    ;
+            .map(d => {
+                var array: Array<any> = d.json();
+                array = array.sort((a, b) => ascending(a.title, b.title))
+                return array;
+            });
     }
 }
