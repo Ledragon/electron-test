@@ -1,7 +1,8 @@
-import { Component, Injectable, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { Component, Injectable, OnInit, Output, Input, EventEmitter, SimpleChanges } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { libraryService } from '../library.service';
 import { IVideo } from '../IVideo';
+import { ascending, descending } from 'd3-array';
 
 @Component({
   selector: 'video-list',
@@ -16,6 +17,7 @@ export class VideoListComponent implements OnInit {
   private _pageSize = 12;
   private _page = 0;
   @Input() video;
+  @Input() sortProperty: string;
 
 
   @Output() selectedChange: EventEmitter<any> = new EventEmitter();
@@ -30,9 +32,13 @@ export class VideoListComponent implements OnInit {
   private load() {
     this._libraryService.load()
       .subscribe((data: Array<any>) => {
-        this._fulllist = data;
+        this._fulllist = data
+          .map((d: any) => {
+            d.url = this._sanitizer.bypassSecurityTrustStyle(`url('data:image/png;base64,${d.serializedImage}')`);
+            return d;
+          });
         this._page = 0;
-        this.refresh();
+        this.refresh(this._fulllist);
       });
   }
   select(video) {
@@ -44,25 +50,26 @@ export class VideoListComponent implements OnInit {
   previous() {
     if (this._page > 0) {
       this._page--;
-      this.refresh();
+      this.refresh(this._fulllist);
     }
   }
   next() {
     if (this._page * this._pageSize < this._fulllist.length) {
       this._page++;
-      this.refresh();
+      this.refresh(this._fulllist);
     }
   }
 
-  private refresh() {
-    this.videos = this._fulllist
-      .map((d: any) => {
-        d.url = this._sanitizer.bypassSecurityTrustStyle(`url('data:image/png;base64,${d.serializedImage}')`);
-        return d;
-      })
-      .sort((a, b) => a.title - b.title)
+  ngOnChanges(changes: SimpleChanges) {
+    this._fulllist = this._fulllist
+      .sort((a, b) => ascending(a[changes['sortProperty'].currentValue], b[changes['sortProperty'].currentValue]))
+    this.refresh(this._fulllist);
+  }
+
+  private refresh(list: Array<IVideo>) {
+    this.videos = list
+    .filter(d=>true)  
       .splice(this._page * this._pageSize, this._pageSize);
     this.select(this.videos[0]);
   }
-
 }

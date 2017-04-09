@@ -1,0 +1,14 @@
+.interaction-component{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    padding: 5px;
+}
+button{
+    padding: 5px;
+    margin: 5px;
+    background: #0f0f0f;
+    color: #f0f0f0;
+    border: none;
+}
+i{margin: 5px;}
